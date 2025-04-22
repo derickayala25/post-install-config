@@ -2,13 +2,17 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Post-Install Configuration</h1>
-This tutorial outlines the post-install configuration of the open-source help desk ticketing system osTicket.<br />
+### 📍 Part 1: Prerequisites & osTicket Installation
+### 👉 [Part 2: Post-Installation Configuration](https://github.com/derickayala25/post-install-config)
+### 👉 [Part 3: Ticket Lifecycle Demo](https://github.com/derickayala25/ticket-lifecycle)
+
+<h1>osTicket - Prerequisites and Installation</h1>
+This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
 
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: How To Configure osTicket, post-installation](https://www.youtube.com)
+- ### [YouTube: How To Install osTicket with Prerequisites](https://www.youtube.com/watch?v=o-YBDTqX_ZU)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -18,25 +22,80 @@ This tutorial outlines the post-install configuration of the open-source help de
 
 <h2>Operating Systems Used </h2>
 
-- Windows 10</b> (22H2)
+- Windows 10 (22H2)
 
-<h2>Post-Install Configuration Objectives</h2>
+<h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- osTicket Core, v1.18.2
+- HeidiSQL 12.10.0.7000 64bit build
+- MySQL v9.2.0 (win64)
+- php-8.3.20-nts-Win32-vs16-x64
+- PHP Manager for IIS v1.5.0
+- IIS URL Rewrite Module 2.1 
+- Microsoft Visual C++ Redistributable for Visual Studio 2015
+- Visual Studio 2022 v17.13 (Community)
 
-<h2>Configuration Steps</h2>
+<h2>Installation Steps</h2>
+
+<br/>
+
+<b>Acknowledge Agent and Admin panels</b><br/>
+Once you log in to osTicket there are two panels which you can work in: Agent Panel and Admin Panel. You'll know which panel you're in by looking at the top right of the browser tab.
+If you see Admin Panel, then you're in the Agent Panel. If you see Agent Panel, then you're in the Admin Panel.
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/user-attachments/assets/a762360f-32dd-43ec-aedf-fc059b8449c5" height="80%" width="80%" alt="Enable IIS"/>
 </p>
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<img src="https://github.com/user-attachments/assets/2ed39cb2-e449-4213-98f5-3028a3909af6" height="80%" width="80%" alt="Enable IIS"/>
+</p><br/>
+
+If you log in as the Administrator (instead of as an Agent), the Agent panel is for viewing and working on tickets as an Agent. In this panel you're not able to do administrative changes as in resetting passwords, adding new users, etc.
+
+In the Admin panel, however, you have access to back-end configuration options. You can adjust system settings, add permissions, set up teams, roles, etc.
+
+It basically breaks down as Agents have Roles (and permissions associated with those roles), Agents can be part of a Team, and a Team will be 
+part of a Department or Departments.</br></br>
+
+<b>Default Roles in osTicket</b></br>
+The default Roles that come with osTicket are <b>View only</b>, <b>Limited Access</b>, <b>Expanded Access</b>, and <b>All Access</b>. You can find these roles with their assigned permissions by going to the <b>Admin Panel</b>, clicking on the <b>Agents</b> tab and clicking on <b>Roles</b>. You can also create new roles with their own custom permissions. 
+
+<p>
+<img src="https://github.com/user-attachments/assets/05b9bcda-0713-435d-a388-77a59631a35d" height="80%" width="80%" alt="Enable IIS"/>
+</p><br/>
+
+![image](https://github.com/user-attachments/assets/05b9bcda-0713-435d-a388-77a59631a35d)
+
+
+Default Departments that appear in osTicket are Top Level Department, Support and Maintenance. You can give the same level of access to the whole Department OR give each individual Agent different access permissions. If you choose Top Level Department as the Parent Deparment, then the new Department you create will be itself a Top Level Department.
+
+Let's create a new Department called SysAdmins. We'll have the Top Level Department as it's "Parent" and we'll leave the rest of the default settings as is.
+
+Teams allow you to pull Agents from different Departments and organize them to handle a specific issue.
+
+The default Team in osTicket is Level 1 Support. You can select a Team Lead and individual Agent members.
+
+We'll create a new team by going to Agents > Teams > Add New Team. We'll name it Online Banking.
+
+If we want to allow end users to create tickets, even if they don't have an account, we can follow these steps: In the Admin Panel, go to Settings > Users. Make sure the Registration Required check box IS NOT checked and that the Registration Method line has Public - Anyone can register selected.
+
+Next, we'll configure Agents. These are the actual workers/employees. In the Admin panel, go to Agents > Add New Agent. Once there, required fields are First and Last Name, Email Address, Username, and Primary Department. You can enter also set a password and assign a team, but it's not required. For this example, the agent will be Jane Doe whos is part of the SysAdmins department and Online Banking team.
+
+Next, we'll configure an end user. These are the people requesting the services, the customers. In the Agent panel, go to Users > Add Users. Required fields are Email Address and Full Name. This user will be Karen at karen@enduser.com.
+
+Now, we'll configure some Service Level Agreements (SLA). This is a formal contract between a service provider and a customer that defines the expected level of service, including specific metrics, responsibilities, and remedies if service levels are not met. The osTicket Default SLA has an 18 hour grace period. However, you can add new SLAs. To do this, we'll go to the Admin panel > Manage > SLA > Add New SLA Plan. We'll name the first one Sev-A, give it a grace period of 1 hour and put it under a 24/7 schedule. The second one we'll name Sev-B. This one will have a grace period of 4 hours and will also have a 24/7 schedule. The third one we'll name Sev-C and give it an 8 hour grace period and a Business Hours schedule.
+
+Next, we'll configure Help Topics. Help Topics guide what information is gathered from Users and how tickets are routed or assigned. You can assign a specific department to handle a topic, add SLAs, etc. osTicket already has five Parent Topics built in. For this example, we'll add five Help Topics and associate each with a Parent Topic. To do this, we'll go to the Admin panel > Manage > Help Topics > Add New Help Topic. We'll name the first topic Business Critical Outage and assign it's Parent Topic as Report a Problem. The second topic will be Personal Computer Issues and the parent topic will also be Report a Problem. The third topic will be Equipment Request with parent topic General Inquiry. The fourth topic will be Password Reset and we'll assign it to Report a Problem/Access Issue. The last topic that we'll add is Other and we'll assign it to General Inquiry. Please note that when you add a topic, the topic itself (along with it's Parent Topic) will become available as a Parent Topic when you're ready to add the next topic.
+
+
+
+
+
+
+
+
+
 
 <p align="center">
   <a href="https://github.com/drewmarsh/osTicket-post-install-configuration">
