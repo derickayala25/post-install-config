@@ -122,9 +122,26 @@ osTicket, by default, allows any end user to create tickets. However, if we want
 Next, we'll configure Agents. These are the actual workers/employees.
 1. In the <b>Admin Panel</b>, go to <b>Agents</b>
 2. Click on `(+) Add New Agent`
-3. Once there, required fields are First and Last Name, Email Address, Username, and Primary Department. You can enter also set a password and assign a team, but it's not required. For this example, the agent will be Jane Doe whos is part of the SysAdmins department and Online Banking team.
+3. Once there, required fields are <b>First</b> and <b>Last Name</b>, <b>Email Address</b>, <b>Username</b>, <b>Primary Department</b> and <b>Role</b> (in the <b>Access</b> tab).
+4. You can also set a password and assign a team, but it's not required.
+5. For this example, the agent will be Jane Doe and she's part of the <b>SysAdmins</b> department. Her role has <b>Expanded Access</b> and she's also part of the <b>Online Banking</b> team.
+6. Once done, click the `Create` button at the bottom
 
-Next, we'll configure an end user. These are the people requesting the services, the customers. In the Agent panel, go to Users > Add Users. Required fields are Email Address and Full Name. This user will be Karen at karen@enduser.com.
+<p>
+<img src="https://github.com/user-attachments/assets/12b0d4ab-d821-4981-a76f-3030f7ee4e17" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
+
+
+<b>Configuring End Users</b></br>
+Next, we'll configure an end user. These are the people requesting the services, the customers.
+1. In the <b>Agent Panel</b>, go to <b>Users</b> > <b>Add Users</b>
+2. Required fields are <b>Email Address</b> and <b>Full Name</b>. This user will be Karen at karen@enduser.com.
+3. Click on the `Add User` button
+
+<p>
+<img src="https://github.com/user-attachments/assets/ce47116b-d8e2-4086-a357-26f0ff38728f" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
+
 
 Now, we'll configure some Service Level Agreements (SLA). This is a formal contract between a service provider and a customer that defines the expected level of service, including specific metrics, responsibilities, and remedies if service levels are not met. The osTicket Default SLA has an 18 hour grace period. However, you can add new SLAs. To do this, we'll go to the Admin panel > Manage > SLA > Add New SLA Plan. We'll name the first one Sev-A, give it a grace period of 1 hour and put it under a 24/7 schedule. The second one we'll name Sev-B. This one will have a grace period of 4 hours and will also have a 24/7 schedule. The third one we'll name Sev-C and give it an 8 hour grace period and a Business Hours schedule.
 
