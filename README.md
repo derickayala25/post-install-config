@@ -41,46 +41,88 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <b>Acknowledge Agent and Admin panels</b><br/>
 Once you log in to osTicket there are two panels which you can work in: Agent Panel and Admin Panel. You'll know which panel you're in by looking at the top right of the browser tab.
-If you see Admin Panel, then you're in the Agent Panel. If you see Agent Panel, then you're in the Admin Panel.
-
-<p>
-<img src="https://github.com/user-attachments/assets/a762360f-32dd-43ec-aedf-fc059b8449c5" height="80%" width="80%" alt="Enable IIS"/>
-</p>
-
-<p>
-<img src="https://github.com/user-attachments/assets/2ed39cb2-e449-4213-98f5-3028a3909af6" height="80%" width="80%" alt="Enable IIS"/>
-</p><br/>
+If you see Admin Panel, then you're in the Agent Panel. If you see Agent Panel, then you're in the Admin Panel.</br>
 
 If you log in as the Administrator (instead of as an Agent), the Agent panel is for viewing and working on tickets as an Agent. In this panel you're not able to do administrative changes as in resetting passwords, adding new users, etc.
 
 In the Admin panel, however, you have access to back-end configuration options. You can adjust system settings, add permissions, set up teams, roles, etc.
 
 It basically breaks down as Agents have Roles (and permissions associated with those roles), Agents can be part of a Team, and a Team will be 
-part of a Department or Departments.</br></br>
+part of a Department or Departments.
+
+<p>
+<img src="https://github.com/user-attachments/assets/1d8f20ca-8fa4-4d8f-81da-4f3903331035" height="80%" width="80%" alt="Agent Panel"/>
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/b09f55c9-ca4e-4f3f-9417-52bddcdd99ca" height="80%" width="80%" alt="Admin Panel"/>
+</p><br/>
+
 
 <b>Default Roles in osTicket</b></br>
 The default Roles that come with osTicket are <b>View only</b>, <b>Limited Access</b>, <b>Expanded Access</b>, and <b>All Access</b>. You can find these roles with their assigned permissions by going to the <b>Admin Panel</b>, clicking on the <b>Agents</b> tab and clicking on <b>Roles</b>. You can also create new roles with their own custom permissions. 
 
 <p>
-<img src="https://github.com/user-attachments/assets/05b9bcda-0713-435d-a388-77a59631a35d" height="80%" width="80%" alt="Enable IIS"/>
+<img src="https://github.com/user-attachments/assets/ef9863f4-83d2-4bbc-a9ea-5c76b1cbd208" height="80%" width="80%" alt="Default Roles"/>
 </p><br/>
 
-![image](https://github.com/user-attachments/assets/05b9bcda-0713-435d-a388-77a59631a35d)
+
+<b>Default Departments in osTicket</b></br>
+Default <b>Parent</b> departments that appear in osTicket are <b>Top Level Department</b>, <b>Maintenance</b>, and <b>Support</b>. You can give the same level of access to the whole <b>Department</b> or give each individual <b>Agent</b> different access permissions. If you choose <b>Top Level Department</b> as the <b>Parent</b> Department, then the new <b>Department</b> you create will be itself become a <b>Parent</b> Department.
+
+<p>
+<img src="https://github.com/user-attachments/assets/5a6c3b14-a787-4702-a786-30b656134ccf" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
+
+<b>Adding a new Department</b></br>
+Let's create a new Department called <b>SysAdmins</b>. We'll have the <b>Top Level Department</b> as it's <b>Parent</b> and we'll leave the rest of the default settings as is.
+1. In the <b>Admin Panel</b>, navigate to <b>Agents</b> > <b>Departments</b>.
+2. Click on `(+) Add New Department`
+3. Type <b>SysAdmins</b> in the <b>Name:</b> box
+4. Click the `Create Dept` button at the bottom
+
+<p>
+<img src="https://github.com/user-attachments/assets/541f2c7e-645e-4e96-88d3-8559ae963d10" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
 
 
-Default Departments that appear in osTicket are Top Level Department, Support and Maintenance. You can give the same level of access to the whole Department OR give each individual Agent different access permissions. If you choose Top Level Department as the Parent Deparment, then the new Department you create will be itself a Top Level Department.
-
-Let's create a new Department called SysAdmins. We'll have the Top Level Department as it's "Parent" and we'll leave the rest of the default settings as is.
-
+<b>Default Teams in osTicket</b></br>
 Teams allow you to pull Agents from different Departments and organize them to handle a specific issue.
 
-The default Team in osTicket is Level 1 Support. You can select a Team Lead and individual Agent members.
+The default Team in osTicket is <b>Level 1 Support</b>. You can select a <b>Team</b> Lead and individual <b>Agent</b> members.
 
-We'll create a new team by going to Agents > Teams > Add New Team. We'll name it Online Banking.
+<p>
+<img src="https://github.com/user-attachments/assets/899d6407-9273-481f-ac4b-7477f7afe832" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
 
-If we want to allow end users to create tickets, even if they don't have an account, we can follow these steps: In the Admin Panel, go to Settings > Users. Make sure the Registration Required check box IS NOT checked and that the Registration Method line has Public - Anyone can register selected.
 
-Next, we'll configure Agents. These are the actual workers/employees. In the Admin panel, go to Agents > Add New Agent. Once there, required fields are First and Last Name, Email Address, Username, and Primary Department. You can enter also set a password and assign a team, but it's not required. For this example, the agent will be Jane Doe whos is part of the SysAdmins department and Online Banking team.
+<b>Adding a new Team</b></br>
+We'll create a new team called <b>Online Banking</b>.
+1. In the <b>Admin Panel</b>, navigate to <b>Agents</b> > <b>Teams</b>
+2. Click on `(+) Add New Team`
+3. Type <b>Online Banking</b> in the <b>Name:</b> box
+4. Click the `Create Team` button at the bottom
+
+<p>
+<img src="https://github.com/user-attachments/assets/67d31570-1870-4a35-95c0-20d0695ab236" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
+
+
+<b>Allowing end users to create tickets</b></br>
+osTicket, by default, allows any end user to create tickets. However, if we want to make changes to those permissions, we can follow these steps:
+1. In the <b>Admin Panel</b>, go to <b>Settings</b> > <b>Users</b>
+2. In the <b>Authentication Settings</b> area, make any desired updates.
+
+<p>
+<img src="https://github.com/user-attachments/assets/1ca59603-d4e1-48af-acf0-8e39e3df6694" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
+
+
+<b>Configuring Agents</b></br>
+Next, we'll configure Agents. These are the actual workers/employees.
+1. In the <b>Admin Panel</b>, go to <b>Agents</b>
+2. Click on `(+) Add New Agent`
+3. Once there, required fields are First and Last Name, Email Address, Username, and Primary Department. You can enter also set a password and assign a team, but it's not required. For this example, the agent will be Jane Doe whos is part of the SysAdmins department and Online Banking team.
 
 Next, we'll configure an end user. These are the people requesting the services, the customers. In the Agent panel, go to Users > Add Users. Required fields are Email Address and Full Name. This user will be Karen at karen@enduser.com.
 
