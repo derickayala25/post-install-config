@@ -2,8 +2,8 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-### 📍 Part 1: Prerequisites & osTicket Installation
-### 👉 [Part 2: Post-Installation Configuration](https://github.com/derickayala25/post-install-config)
+### 📍 [Part 1: Prerequisites & osTicket Installation](https://github.com/derickayala25/osticket-prereqs)
+### 👉 Part 2: Post-Installation Configuration
 ### 👉 [Part 3: Ticket Lifecycle Demo](https://github.com/derickayala25/ticket-lifecycle)
 
 <h1>osTicket - Prerequisites and Installation</h1>
@@ -142,10 +142,33 @@ Next, we'll configure an end user. These are the people requesting the services,
 <img src="https://github.com/user-attachments/assets/ce47116b-d8e2-4086-a357-26f0ff38728f" height="80%" width="80%" alt="Default Roles"/>
 </p><br/>
 
+<b>Configuring Service Level Agreements</b></br>
+Now, we'll configure some Service Level Agreements (SLA). This is a formal contract between a service provider and a customer 
+that defines the expected level of service, including specific metrics, responsibilities, and remedies if service levels are not met. 
+The osTicket Default SLA has an 18 hour grace period. However, you can add new SLAs. To do this:
+1. Go to the <b>Admin Panel</b> > <b>Manage</b> > <b>SLA</b> > <b>Add New SLA Plan</b>.
+2. We'll <b>Name</b> the first SLA Sev-A, give it a <b>Grace Period</b> of 1 hour and put it under a 24/7 <b>Schedule</b>.
+3. Click on the `Add Plan` button.
+4. The second one we'll <b>Name</b> Sev-B. This one will have a <b>Grace Period</b> of 4 hours and will also have a 24/7 <b>Schedule</b>.
+5. The third one we'll <b>Name</b> Sev-C and give it an 8 hour <b>Grace Period</b> and a Business Hours <b>Schedule</b>.
 
-Now, we'll configure some Service Level Agreements (SLA). This is a formal contract between a service provider and a customer that defines the expected level of service, including specific metrics, responsibilities, and remedies if service levels are not met. The osTicket Default SLA has an 18 hour grace period. However, you can add new SLAs. To do this, we'll go to the Admin panel > Manage > SLA > Add New SLA Plan. We'll name the first one Sev-A, give it a grace period of 1 hour and put it under a 24/7 schedule. The second one we'll name Sev-B. This one will have a grace period of 4 hours and will also have a 24/7 schedule. The third one we'll name Sev-C and give it an 8 hour grace period and a Business Hours schedule.
+<p>
+<img src="https://github.com/user-attachments/assets/971f929a-1f37-4026-88b5-b188215fedf1" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
 
-Next, we'll configure Help Topics. Help Topics guide what information is gathered from Users and how tickets are routed or assigned. You can assign a specific department to handle a topic, add SLAs, etc. osTicket already has five Parent Topics built in. For this example, we'll add five Help Topics and associate each with a Parent Topic. To do this, we'll go to the Admin panel > Manage > Help Topics > Add New Help Topic. We'll name the first topic Business Critical Outage and assign it's Parent Topic as Report a Problem. The second topic will be Personal Computer Issues and the parent topic will also be Report a Problem. The third topic will be Equipment Request with parent topic General Inquiry. The fourth topic will be Password Reset and we'll assign it to Report a Problem/Access Issue. The last topic that we'll add is Other and we'll assign it to General Inquiry. Please note that when you add a topic, the topic itself (along with it's Parent Topic) will become available as a Parent Topic when you're ready to add the next topic.
+
+<b>Configuring Help Topics</b></br>
+Next, we'll configure Help Topics. Help Topics guide what information is gathered from Users and how tickets are routed or assigned. 
+You can assign a specific department to handle a topic, add SLAs, etc. osTicket already has five <b>Parent Topics</b> built in.
+For this example, we'll add five Help Topics and associate each with a Parent Topic. To do this:
+1. Go to the <b>Admin Panel</b> > <b>Manage</b> > <b>Help Topics</b> > <b>Add New Help Topic</b>.
+2. We'll name the first <b>Topic</b> <em>Business Critical Outage</em> and assign it's <b>Parent Topic</b> as <em>Report a Problem</em>.
+3. Click on the `Add Topic` button.
+4. The second <b>Topic</b> will be <em>Personal Computer Issues</em> and the <b>Parent Topic</b> will also be <em>Report a Problem</em>.
+5. The third <b>Topic</b> will be <em>Equipment Request</em> with <b>Parent Topic</b> <em>General Inquiry</em>.
+6. The fourth <b>Topic</b> will be <em>Password Reset</em> and we'll assign it to <em>Report a Problem/Access Issue</em>.
+7. The last <b>Topic</b> that we'll add is <em>Other</em> and we'll assign it to <em>General Inquiry</em>.
+8. Please note that when you add a topic, the topic itself (along with it's <b>Parent Topic</b>) will become available as a <b>Parent Topic</b> when you're ready to add the next topic.
 
 
 
