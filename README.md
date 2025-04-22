@@ -170,9 +170,9 @@ For this example, we'll add five Help Topics and associate each with a Parent To
 7. The last <b>Topic</b> that we'll add is <em>Other</em> and we'll assign it to <em>General Inquiry</em>.
 8. Please note that when you add a topic, the topic itself (along with it's <b>Parent Topic</b>) will become available as a <b>Parent Topic</b> when you're ready to add the next topic.
 
-
-
-
+<p>
+<img src="https://github.com/user-attachments/assets/ee4bb690-8a6b-4502-85c1-261ab5815cb3" height="80%" width="80%" alt="Default Roles"/>
+</p><br/>
 
 
 
