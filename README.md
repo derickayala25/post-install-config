@@ -87,11 +87,12 @@ The default Team in osTicket is <b>Level 1 Support</b>. You can select a <b>Team
 
 
 <b>Adding a new Team</b></br>
-We'll create a new team called <b>Online Banking</b>.
+We'll create two new team. The first will be called <b>Online Banking</b> and the second will be <b>In-House Systems</b>.
 1. In the <b>Admin Panel</b>, navigate to <b>Agents</b> > <b>Teams</b>
 2. Click on `(+) Add New Team`
 3. Type <b>Online Banking</b> in the <b>Name:</b> box
 4. Click the `Create Team` button at the bottom
+5. Follow the same steps for the <b>In-House Systems</b> team.
 
 <p>
 <img src="https://github.com/user-attachments/assets/67d31570-1870-4a35-95c0-20d0695ab236" height="80%" width="80%" alt="Default Roles"/>
@@ -116,6 +117,7 @@ Next, we'll configure Agents. These are the actual workers/employees.
 4. You can also set a password and assign a team, but it's not required.
 5. For this example, the agent will be Jane Doe and she's part of the <b>SysAdmins</b> department. Her role has <b>Expanded Access</b> and she's also part of the <b>Online Banking</b> team.
 6. Once done, click the `Create` button at the bottom
+7. We'll also add John Doe as a New Agent. He will also be part of the <b>SysAdmins</b> department. His role has <b>Limited Access</b> and he's part of the <b>In-House Systems</b> team.
 
 <p>
 <img src="https://github.com/user-attachments/assets/12b0d4ab-d821-4981-a76f-3030f7ee4e17" height="80%" width="80%" alt="Default Roles"/>
