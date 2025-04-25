@@ -114,10 +114,11 @@ Next, we'll configure Agents. These are the actual workers/employees.
 1. In the <b>Admin Panel</b>, go to <b>Agents</b>
 2. Click on `(+) Add New Agent`
 3. Once there, required fields are <b>First</b> and <b>Last Name</b>, <b>Email Address</b>, <b>Username</b>, <b>Primary Department</b> and <b>Role</b> (in the <b>Access</b> tab).
-4. You can also set a password and assign a team, but it's not required.
+4. You can also set a password and assign a team. For this example, the password will be <b>Password1</b> for both agents.
 5. For this example, the agent will be Jane Doe, her email is jane@newcompany.com and she's part of the <b>SysAdmins</b> department. Her role has <b>Expanded Access</b> and she's also part of the <b>Online Banking</b> team.
-6. Once done, click the `Create` button at the bottom
-7. We'll also add John Doe as a New Agent. He will also be part of the <b>SysAdmins</b> department. His role has <b>Expanded Access</b> and he's part of the <b>In-House Systems</b> team.
+6. To set her password, click on the `Set Password` button. Uncheck the <b>Send the agent a password reset email</b> box, enter the password and confirm, uncheck the <b>Require password change at next login</b> box, and click on `Set`.
+7. Once done, click the `Create` button at the bottom
+8. We'll also add John Doe as a New Agent. He will also be part of the <b>SysAdmins</b> department. His role has <b>Expanded Access</b> and he's part of the <b>In-House Systems</b> team.
 
 <p>
 <img src="https://github.com/user-attachments/assets/12b0d4ab-d821-4981-a76f-3030f7ee4e17" height="80%" width="80%" alt="Default Roles"/>
