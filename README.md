@@ -115,7 +115,7 @@ Next, we'll configure Agents. These are the actual workers/employees.
 2. Click on `(+) Add New Agent`
 3. Once there, required fields are <b>First</b> and <b>Last Name</b>, <b>Email Address</b>, <b>Username</b>, <b>Primary Department</b> and <b>Role</b> (in the <b>Access</b> tab).
 4. You can also set a password and assign a team, but it's not required.
-5. For this example, the agent will be Jane Doe and she's part of the <b>SysAdmins</b> department. Her role has <b>Expanded Access</b> and she's also part of the <b>Online Banking</b> team.
+5. For this example, the agent will be Jane Doe, her email is jane@newcompany.com and she's part of the <b>SysAdmins</b> department. Her role has <b>Expanded Access</b> and she's also part of the <b>Online Banking</b> team.
 6. Once done, click the `Create` button at the bottom
 7. We'll also add John Doe as a New Agent. He will also be part of the <b>SysAdmins</b> department. His role has <b>Expanded Access</b> and he's part of the <b>In-House Systems</b> team.
 
@@ -126,7 +126,7 @@ Next, we'll configure Agents. These are the actual workers/employees.
 
 <b>Configuring End Users</b></br>
 Next, we'll configure an end user. These are the people requesting the services, the customers.
-1. In the <b>Agent Panel</b>, go to <b>Users</b> > <b>Add Users</b>
+1. In the <b>Agent Panel</b>, go to <b>Users</b> > <b>Add User</b>
 2. Required fields are <b>Email Address</b> and <b>Full Name</b>. This user will be Karen at karen@enduser.com.
 3. Click on the `Add User` button
 
@@ -139,7 +139,7 @@ Now, we'll configure some Service Level Agreements (SLA). This is a formal contr
 that defines the expected level of service, including specific metrics, responsibilities, and remedies if service levels are not met. 
 The osTicket Default SLA has an 18 hour grace period. However, you can add new SLAs. To do this:
 1. Go to the <b>Admin Panel</b> > <b>Manage</b> > <b>SLA</b> > <b>Add New SLA Plan</b>.
-2. We'll <b>Name</b> the first SLA Sev-A, give it a <b>Grace Period</b> of 1 hour and put it under a 24/7 <b>Schedule</b>.
+2. We'll <b>Name</b> the first SLA <em>Sev-A</em>, give it a <b>Grace Period</b> of 1 hour and put it under a 24/7 <b>Schedule</b>.
 3. Click on the `Add Plan` button.
 4. The second one we'll <b>Name</b> Sev-B. This one will have a <b>Grace Period</b> of 4 hours and will also have a 24/7 <b>Schedule</b>.
 5. The third one we'll <b>Name</b> Sev-C and give it an 8 hour <b>Grace Period</b> and a Business Hours <b>Schedule</b>.
@@ -155,7 +155,7 @@ You can assign a specific department to handle a topic, add SLAs, etc. osTicket 
 For this example, we'll add five Help Topics and associate each with a Parent Topic. To do this:
 1. Go to the <b>Admin Panel</b> > <b>Manage</b> > <b>Help Topics</b> > <b>Add New Help Topic</b>.
 2. We'll name the first <b>Topic</b> <em>Business Critical Outage</em> and assign it's <b>Parent Topic</b> as <em>Report a Problem</em>.
-3. Click on the `Add Topic` button.
+3. Click on the `Add Topic` button. Click on the <b>Help Topics</b> tab again.
 4. The second <b>Topic</b> will be <em>Personal Computer Issues</em> and the <b>Parent Topic</b> will also be <em>Report a Problem</em>.
 5. The third <b>Topic</b> will be <em>Equipment Request</em> with <b>Parent Topic</b> <em>General Inquiry</em>.
 6. The fourth <b>Topic</b> will be <em>Password Reset</em> and we'll assign it to <em>Report a Problem/Access Issue</em>.
